@@ -1,0 +1,118 @@
+.weather-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+    .location-time {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        #locationSelect {
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .location {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .time {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+    }
+
+    .tamperature-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .tamperature {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        width: 100px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+    }
+
+    .sun {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+    }
+
+    .column {
+        display: flex;
+        width: 100%;
+
+        .column1 {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        .column2 {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            align-items: center;
+        }
+
+        .column2 img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.dark {
+    background-color: #1e1e1e;
+    color: white;
+
+    .btn-dark {
+        background-color: #333;
+        color: #fff;
+    }
+}

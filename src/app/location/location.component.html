@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="weather-container" *ngIf="weatherData">
+        <div class="location-time">
+            <!-- dark theme button -->
+            <button class="btn btn-dark" (click)="toggleDarkMode()">Toggle Theme</button>
+            <select id="locationSelect" [(ngModel)]="selectedLocation" (change)="getWeather()">
+                <option value="New York">New York</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Karachi">Karachi</option>
+            </select>
+            <h2 class="time">{{ currentDate | date: 'dd/MM/yyyy' }}</h2>
+        </div>
+        <div class="tamperature-detail">
+            <img src="assets/images/tamperature.png" alt="" id="imgClickAndChange">
+            <p class="tamperature">{{ weatherData.main.temp }}°C</p>
+            <p class="description">{{ weatherData.weather[0].description }}</p>
+        </div>
+        <div class="column">
+            <div class="column1">
+                <div class="flex">
+                    <img src="assets/images/feelslike.png" alt="">
+                    <p>{{ weatherData.main.feels_like }}°C</p>
+                </div>
+                <div class="flex">
+                    <img src="assets/images/humidity.png" alt="">
+                    <p>{{ humidity }}%</p>
+                </div>
+                <div class="flex">
+                    <img src="assets/images/windspeed.png" alt="">
+                    <p>{{ windSpeed }} m/s</p>
+                </div>
+                <div class="flex">
+                    <img src="assets/images/pressure.png" alt="">
+                    <p>{{ pressure }} hPa</p>
+                </div>
+            </div>
+            <div class="column2">
+                <img [src]="getWeatherIconUrl(weatherData.weather[0].icon)" alt="Weather Icon" />
+            </div>
+        </div>
+        <div class="sun">
+            <div class="flex">
+                <img src="assets/images/sunrise.png" alt="">
+                <p>{{ sunriseTime | date: 'hh:mm a' }}</p>
+            </div>
+            <div class="flex">
+                <img src="assets/images/sunset.png" alt="">
+                <p>{{ sunsetTime | date: 'hh:mm a' }}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="forecastItems.length > 0">
+        <h2>One-Week Weather Forecast for {{ selectedLocation }}</h2>
+        <div *ngFor="let item of forecastItems">
+            <img [src]="getWeatherIconUrl(item.weatherIcon)" alt="Weather Icon" />
+            <p>Temperature: {{ item.temperature }}°C</p>
+        </div>
+    </div>
+</div>
